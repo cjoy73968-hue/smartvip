@@ -1,0 +1,19 @@
+<!-- 周期礼品选择 wxml -->
+<view class="container">
+  <view class="section">
+    <text class="section-title">选择周期礼品</text>
+    <view class="gift-list">
+      <block wx:for="{{gifts}}" wx:key="id">
+        <view class="gift-item {{selectedGiftId === item.id ? 'selected' : ''}}"
+              bindtap="onGiftSelect" data-id="{{item.id}}">
+          <image src="{{item.imageUrl}}" mode="aspectFill" class="gift-image"/>
+          <text class="gift-name">{{item.name}}</text>
+          <text class="gift-price">¥{{item.price}}</text>
+          <view wx:if="{{selectedGiftId === item.id}}" class="selected-badge">已选择</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <button type="primary" bindtap="onConfirm">确认选择</button>
+</view>

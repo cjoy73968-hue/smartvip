@@ -1,0 +1,32 @@
+<!-- 商品详情 wxml -->
+<view class="container">
+  <block wx:if="{{product}}">
+    <image src="{{product.imageUrl}}" mode="aspectFill" class="product-image"/>
+
+    <view class="product-info">
+      <text class="product-name">{{product.name}}</text>
+      <text class="product-price">¥{{product.price}}</text>
+      <text class="product-stock">库存: {{product.stock}}</text>
+    </view>
+
+    <view class="section">
+      <text class="section-title">收货地址</text>
+      <view class="address-card" bindtap="onSelectAddress">
+        <block wx:if="{{address}}">
+          <text>{{address.name}} {{address.phone}}</text>
+          <text>{{address.province}}{{address.city}}{{address.district}}{{address.detailAddress}}</text>
+        </block>
+        <block wx:else>
+          <text class="placeholder">请选择收货地址</text>
+        </block>
+      </view>
+    </view>
+
+    <view class="section">
+      <text class="section-title">数量</text>
+      <input type="number" value="{{quantity}}" bindchange="onQuantityChange" class="quantity-input"/>
+    </view>
+
+    <button type="primary" bindtap="onPurchase">立即购买</button>
+  </block>
+</view>

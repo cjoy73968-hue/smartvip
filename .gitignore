@@ -1,0 +1,27 @@
+# Java
+backend/target/
+*.class
+*.jar
+*.war
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+.DS_Store
+
+# Config (contain secrets)
+backend/src/main/resources/application.yml
+
+# Logs
+*.log
+logs/
+
+# OS
+Thumbs.db

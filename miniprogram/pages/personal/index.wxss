@@ -1,0 +1,132 @@
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  background-color: #409eff;
+  padding: 40rpx;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.avatar image {
+  width: 100%;
+  height: 100%;
+}
+
+.user-info {
+  margin-left: 30rpx;
+  color: #fff;
+}
+
+.nickname {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.membership-status {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  opacity: 0.9;
+}
+
+.balance-section {
+  display: flex;
+  background-color: #fff;
+  padding: 30rpx;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+}
+
+.balance-item {
+  flex: 1;
+  text-align: center;
+}
+
+.balance-label {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.balance-value {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+  margin-top: 10rpx;
+}
+
+.expire-info {
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.referral-section {
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.referral-label {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.referral-code {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #409eff;
+  font-weight: bold;
+}
+
+.menu-section {
+  background-color: #fff;
+  border-radius: 16rpx;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item text:first-child {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.arrow {
+  color: #ccc;
+  font-size: 28rpx;
+}
+
+.login-btn {
+  margin-top: 40rpx;
+  background-color: #409eff;
+  color: #fff;
+  border-radius: 44rpx;
+}

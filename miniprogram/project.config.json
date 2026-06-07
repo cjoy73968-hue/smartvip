@@ -1,0 +1,39 @@
+{
+  "description": "会员管理系统小程序",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "setting": {
+    "bundle": false,
+    "userConfirmedBundleSwitch": false,
+    "urlCheck": false,
+    "scopeDataCheck": false,
+    "coverView": true,
+    "es6": true,
+    "postcss": true,
+    "compileHotReLoad": true,
+    "minified": true,
+    "autoAuditor": false,
+    "showShadowRootInWxmlPanel": true,
+    "useCompilerModule": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "showES6CompileOption": false,
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "minifyWXML": true,
+    "ignoreUploadUnusedFiles": false,
+    "condition": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "3.16.1",
+  "appid": "",
+  "projectname": "membership-miniprogram",
+  "condition": {},
+  "editorSetting": {
+    "tabSize": 2,
+    "tabIndent": "insertSpaces"
+  }
+}

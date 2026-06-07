@@ -1,0 +1,35 @@
+# Copyright (C) 2024 会员管理系统项目
+#
+# 本项目采用 AGPL-3.0 开源协议开源。
+#
+# 您可以自由使用、修改和分发本项目，但若通过网络使用（包括修改后部署），
+# 也必须按照 AGPL-3.0 协议开源您的修改版本。
+#
+# 完整协议文本请参见 LICENSE 文件.
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: membership-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: membership_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./src/main/resources/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    command: --default-authentication-plugin=mysql_native_password
+
+  redis:
+    image: redis:7-alpine
+    container_name: membership-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  mysql_data:
+  redis_data:

@@ -1,0 +1,49 @@
+# Copyright (C) 2024 会员管理系统项目
+#
+# 本项目采用 AGPL-3.0 开源协议开源。
+#
+# 您可以自由使用、修改和分发本项目，但若通过网络使用（包括修改后部署），
+# 也必须按照 AGPL-3.0 协议开源您的修改版本。
+#
+# 完整协议文本请参见 LICENSE 文件.
+server:
+  port: 8080
+
+spring:
+  application:
+    name: membership-system
+
+  datasource:
+    # 数据库连接，请根据本地环境修改
+    url: jdbc:mysql://localhost:3306/membership_db?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: your-db-username
+    password: your-db-password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+# 微信小程序配置（请替换为你的真实AppID和Secret）
+wechat:
+  miniapp:
+    appid: your-wechat-appid
+    secret: your-wechat-secret
+  pay:
+    mchId: your-merchant-id
+    mchKey: your-merchant-key
+    notifyUrl: http://your-domain/api/pay/callback
+
+# 七牛云OSS配置（请替换为你的真实密钥）
+qiniu:
+  accessKey: your-qiniu-access-key
+  secretKey: your-qiniu-secret-key
+  bucket: your-bucket-name
+  domain: http://your-domain.com

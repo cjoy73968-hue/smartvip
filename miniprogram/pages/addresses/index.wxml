@@ -1,0 +1,20 @@
+<!-- 地址管理 wxml -->
+<view class="container">
+  <view class="address-list">
+    <block wx:for="{{addresses}}" wx:key="id">
+      <view class="address-item" bindtap="onAddressSelect" data-id="{{item.id}}">
+        <view class="address-info">
+          <text class="address-name">{{item.name}} {{item.phone}}</text>
+          <text class="address-detail">{{item.province}}{{item.city}}{{item.district}}{{item.detailAddress}}</text>
+          <view wx:if="{{item.isDefault}}" class="default-tag">默认</view>
+        </view>
+        <view class="address-actions">
+          <view class="action-btn" bindtap="onSetDefault" data-id="{{item.id}}">设为默认</view>
+          <view class="action-btn" bindtap="onDelete" data-id="{{item.id}}">删除</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <button type="primary" bindtap="onAddAddress" class="add-btn">新增地址</button>
+</view>

@@ -1,0 +1,28 @@
+<!-- 订单列表 wxml -->
+<view class="container">
+  <view class="tabs">
+    <view wx:for="{{['all', 'consumption', 'delivery']}}" wx:key="*this"
+          class="tab {{activeTab === item ? 'active' : ''}}"
+          bindtap="onTabChange" data-tab="{{item}}">
+      {{item === 'all' ? '全部' : item === 'consumption' ? '消费' : '派送'}}
+    </view>
+  </view>
+
+  <view class="order-list">
+    <block wx:for="{{orders}}" wx:key="id">
+      <view class="order-item">
+        <view class="order-header">
+          <text class="order-type">{{item.type === 'consumption' ? '消费订单' : '礼品派送'}}</text>
+          <el-tag type="{{getStatusType(item.status)}}">{{getStatusText(item.status)}}</el-tag>
+        </view>
+        <view class="order-body">
+          <text>{{item.productName || item.giftName}}</text>
+          <text>¥{{item.amount || item.priceDiff}}</text>
+        </view>
+        <view class="order-footer">
+          <text>{{item.createTime}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

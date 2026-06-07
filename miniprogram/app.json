@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/personal/index",
+    "pages/register/index",
+    "pages/products/index",
+    "pages/product-detail/index",
+    "pages/recharge/index",
+    "pages/orders/index",
+    "pages/addresses/index",
+    "pages/address-edit/index",
+    "pages/periodic-gift/index",
+    "pages/referral/index",
+    "pages/poster/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "会员管理系统",
+    "navigationBarBackgroundColor": "#409eff",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#409eff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/products/index",
+        "text": "商品",
+        "iconPath": "images/tab-product.png",
+        "selectedIconPath": "images/tab-product-active.png"
+      },
+      {
+        "pagePath": "pages/orders/index",
+        "text": "订单",
+        "iconPath": "images/tab-order.png",
+        "selectedIconPath": "images/tab-order-active.png"
+      },
+      {
+        "pagePath": "pages/personal/index",
+        "text": "我的",
+        "iconPath": "images/tab-personal.png",
+        "selectedIconPath": "images/tab-personal-active.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于配送地址定位"
+    }
+  }
+}

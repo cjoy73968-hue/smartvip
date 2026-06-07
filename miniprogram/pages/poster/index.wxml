@@ -1,0 +1,18 @@
+<!-- 海报生成页面 wxml -->
+<view class="container">
+  <view class="poster-preview">
+    <image src="{{posterUrl}}" mode="aspectFit" class="poster-image" wx:if="{{posterUrl}}"/>
+    <view wx:else class="loading-container">
+      <text>海报生成中...</text>
+    </view>
+  </view>
+
+  <view class="actions">
+    <button type="primary" bindtap="onSavePoster" disabled="{{!posterUrl}}">保存到相册</button>
+    <button open-type="share" class="share-btn">分享给好友</button>
+  </view>
+
+  <view class="tip">
+    <text>提示：保存海报后可以打印或发送给好友扫描</text>
+  </view>
+</view>

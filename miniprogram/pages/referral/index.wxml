@@ -1,0 +1,35 @@
+<!-- 推荐页面 wxml -->
+<view class="container">
+  <view class="referral-header">
+    <text class="referral-code">{{referralCode}}</text>
+    <text class="referral-hint">我的推荐码</text>
+  </view>
+
+  <view class="stats-row">
+    <view class="stat-item">
+      <text class="stat-value">{{referralCount}}</text>
+      <text class="stat-label">已推荐</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">¥{{totalRebate}}</text>
+      <text class="stat-label">累计返利</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">¥{{pendingRebate}}</text>
+      <text class="stat-label">待入账</text>
+    </view>
+  </view>
+
+  <button open-type="share" type="primary">邀请好友</button>
+  <button bindtap="onGeneratePoster" class="secondary-btn">生成推广海报</button>
+
+  <view class="rebate-history">
+    <text class="section-title">返利记录</text>
+    <block wx:for="{{rebateLogs}}" wx:key="id">
+      <view class="rebate-item">
+        <text class="rebate-amount">+¥{{item.amount}}</text>
+        <text class="rebate-time">{{item.createTime}}</text>
+      </view>
+    </block>
+  </view>
+</view>

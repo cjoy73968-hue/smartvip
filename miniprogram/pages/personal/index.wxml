@@ -1,0 +1,52 @@
+<view class="container">
+  <view class="user-section">
+    <view class="avatar">
+      <image src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"/>
+    </view>
+    <view class="user-info">
+      <text class="nickname">{{userInfo.nickname || '未登录'}}</text>
+      <text class="membership-status">{{membershipStatus}}</text>
+    </view>
+  </view>
+
+  <view class="balance-section">
+    <view class="balance-item">
+      <text class="balance-label">充值余额</text>
+      <text class="balance-value">¥{{balances.recharge}}</text>
+    </view>
+    <view class="balance-item">
+      <text class="balance-label">返利余额</text>
+      <text class="balance-value">¥{{balances.rebate}}</text>
+    </view>
+  </view>
+
+  <view class="expire-info" wx:if="{{expireTime}}">
+    <text>会员到期时间: {{expireTime}}</text>
+  </view>
+
+  <view class="referral-section" wx:if="{{referralCode}}">
+    <text class="referral-label">我的推荐码:</text>
+    <text class="referral-code">{{referralCode}}</text>
+  </view>
+
+  <view class="menu-section">
+    <view class="menu-item" bindtap="goToOrders">
+      <text>我的订单</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="goToAddresses">
+      <text>收货地址</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="goToRecharge">
+      <text>充值</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="goToReferral">
+      <text>推荐好友</text>
+      <text class="arrow">></text>
+    </view>
+  </view>
+
+  <button wx:if="{{!hasUserInfo}}" class="login-btn" bindtap="doLogin">登录</button>
+</view>

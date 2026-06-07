@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (C) 2024 会员管理系统项目
+
+  本项目采用 AGPL-3.0 开源协议开源。
+
+  您可以自由使用、修改和分发本项目，但若通过网络使用（包括修改后部署），
+  也必须按照 AGPL-3.0 协议开源您的修改版本。
+
+  完整协议文本请参见 LICENSE 文件。
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smartvip.mapper.RebateLogMapper">
+    <select id="selectPendingRebate" resultType="com.smartvip.entity.RebateLog">
+        SELECT id, referrer_id, order_id, order_type, amount, status, arrive_time, create_time
+        FROM rebate_logs WHERE status = 0
+    </select>
+</mapper>

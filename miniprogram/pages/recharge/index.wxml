@@ -1,0 +1,28 @@
+<!-- 充值页面 wxml -->
+<view class="container">
+  <view class="section">
+    <text class="section-title">选择充值金额</text>
+    <view class="amount-options">
+      <view wx:for="{{[100, 200, 500, 1000]}}" wx:key="*this"
+            class="amount-option {{amount === item ? 'active' : ''}}"
+            bindtap="onRechargeOptionTap" data-amount="{{item}}">
+        {{item}}元
+      </view>
+    </view>
+  </view>
+
+  <view class="section">
+    <text class="section-title">收货地址</text>
+    <view class="address-card" bindtap="onSelectAddress">
+      <block wx:if="{{address}}">
+        <text>{{address.name}} {{address.phone}}</text>
+        <text>{{address.province}}{{address.city}}{{address.district}}{{address.detailAddress}}</text>
+      </block>
+      <block wx:else>
+        <text class="placeholder">请选择收货地址</text>
+      </block>
+    </view>
+  </view>
+
+  <button type="primary" bindtap="onRecharge">立即充值</button>
+</view>

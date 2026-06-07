@@ -1,0 +1,30 @@
+<!-- 预约页面 wxml -->
+<view class="container">
+  <view class="header">
+    <text class="title">用户注册</text>
+  </view>
+
+  <view class="form-item">
+    <text>头像</text>
+    <button open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      <image src="{{avatarUrl}}" mode="aspectFill" class="avatar"/>
+    </button>
+  </view>
+
+  <view class="form-item">
+    <text>昵称</text>
+    <input type="nickname" placeholder="请输入昵称" bindinput="onNicknameInput" value="{{nickname}}"/>
+  </view>
+
+  <view class="form-item">
+    <text>手机号</text>
+    <input type="number" placeholder="请输入手机号" bindinput="onPhoneInput" value="{{phone}}"/>
+  </view>
+
+  <view class="form-item">
+    <text>收货地址</text>
+    <input placeholder="省/市/区/详细地址" bindinput="onAddressInput" value="{{address}}"/>
+  </view>
+
+  <button type="primary" bindtap="onRegister">完成注册</button>
+</view>
